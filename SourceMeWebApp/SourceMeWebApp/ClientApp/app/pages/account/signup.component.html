@@ -1,0 +1,112 @@
+﻿<!--<div class="col-md-3 card bg-light p-4" >
+  
+        <div *ngIf="errorMsg" class="alert alert-warning">{{ errorMsg }}</div>
+        <form [formGroup]="signUpFormGroup" method="post" (submit)="onRegister()" #regForm="ngForm"   novalidate>
+            <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input type="text" class="form-control" name="firstName" [formControlName]="firstName" required />
+                <div class="text-danger" *ngIf="signUpFormGroup.controls.firstName.errors?.required && signUpFormGroup.controls.firstName.touched" >First Name is required!</div>
+            </div>
+
+            <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input type="text" class="form-control" name="lastName" [formControlName]="lastName"  required />
+                <div class="text-danger" *ngIf="lastname.touched &&lastname.invalid&&lastname.errors.required">Last Name is required!</div>
+            </div>
+
+            <div class="form-group">
+                <label for="userName">User Name</label>
+                <input type="text" class="form-control" name="userName" [formControlName]="username"  required />
+                <div class="text-danger" *ngIf="username.touched && username.invalid && username.errors.required">User Name is required!</div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">email</label>
+                <input type="text" class="form-control" name="email" [formControlName]="email"  required />
+                <div class="text-danger" *ngIf="email.touched && email.invalid&&email.errors.required">You have to provide a valid email address!</div>
+            </div>
+
+            <div [formGroup]="passwordFormGroup">
+                <div class="form-group">
+                    <label for="passWord">Password</label>
+                    <input type="password" class="form-control" name="password" [formControlName]="password"  required />
+                    <div class="text-danger" *ngIf="passwordFormGroup.controls.password.errors?.required && passwordFormGroup.controls.password.touched">Type your Password</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="passWord">Confirm Password</label>
+                    <input type="password" class="form-control" name="confirmPassword" [formControlName]="confirmPassword"  required />
+                    <div class="text-danger " *ngIf="passwordFormGroup.controls.cpassword.errors?.required && passwordFormGroup.controls.cpassword.touched">Confirm Password</div>
+                    <div class="text-danger" *ngIf="passwordFormGroup.errors?.doesMatchPassword">Password did not match!</div>
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                <input type="submit" class="btn btn-success" value="Register"  [disabled]="regForm.invalid"/>
+            </div>
+
+
+
+        </form>
+       
+    
+</div>-->
+
+
+<div class="col-md-3 col-lg-3 offset-md-3">
+
+    <div *ngIf="errorMsg" class="alert alert-warning">{{ errorMsg }}</div>
+    <form  (submit)="onRegister()" [formGroup]="signUpFormGroup" method="post"  #regForm="ngForm" novalidate>
+        <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" class="form-control" name="firstName" formControlName="firstName" required />
+            <div class="text-danger" *ngIf="firstName.errors?.required && firstName.touched">First Name is required!</div>
+        </div>
+
+        <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input type="text" class="form-control" name="lastName" formControlName="lastName" required />
+            <div class="text-danger" *ngIf="lastName.errors?.required && lastName.touched ">Last Name is required!</div>
+        </div>
+
+        <div class="form-group">
+            <label for="userName">User Name</label>
+            <input type="text" class="form-control" name="userName" formControlName="userName" required />
+            <div class="text-danger" *ngIf="userName.errors?.required&&lastName.touched">User Name is required!</div>
+            <div class="text-danger" *ngIf="userName.errors?.minlength">User name must be at least 4 characters long!</div>
+        </div>
+
+        <div class="form-group">
+            <label for="email">email</label>
+            <input type="text" class="form-control" name="email" formControlName="email" required />
+            <div class="text-danger" *ngIf="email.errors?.required&&email.touched">You have to provide a valid email address!</div>
+        </div>
+
+        <div [formGroup]="passwordFormGroup">
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" name="password" formControlName="password"  />
+                <div class="text-danger" *ngIf="password && password.errors?.required && password.touched">Type your Password!Password must contain alphanumeric character and a special character</div>
+                <div class="text-danger" *ngIf="password.errors?.minlength">Password must be at least 8 characters long!</div>
+            </div>
+
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" class="form-control" name="confirmPassword" formControlName="confirmPassword" required  />
+                <div class="text-danger " *ngIf="confirmPassword.errors?.required && confirmPassword.touched">Confirm Password</div>
+                <div class="text-danger" *ngIf="passwordFormGroup.errors?.doesMatchPassword">Password did not match!</div>
+            </div>
+
+        </div>
+
+        <div class="form-group">
+            <input type="submit" class="btn btn-success" value="Register" [disabled]="regForm && regForm.invalid" />
+        </div>
+
+
+
+    </form>
+
+
+</div>

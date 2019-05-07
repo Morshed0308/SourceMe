@@ -1,0 +1,38 @@
+﻿<div class="feed-container"
+     infiniteScroll
+     [infiniteScrollDistance]="2"
+     [infiniteScrollThrottle]="50"
+     [infiniteScrollContainer]="selector"
+     [fromRoot]="true"
+     (scrolled)="onScroll()">
+
+    <div class="container mt-2">
+        <h5>News Feed</h5>
+    </div>
+    <div *ngIf="subCategories.length <= 0" class="container text-warning">You need to select a Category first.</div>
+    <ul class="container news-list">
+        <li *ngFor="let fi of feedItems">
+            <div class="card item-info bg-light">
+                <a class="mb-2 text-info" href="{{fi.link}}" target="_blank"><h4>{{fi.title}}</h4></a>
+                <div class="row">
+                    <div *ngIf="fi.imageUrl" class="col-md-2">
+                        <!--<div class="bg-secondary text-white image-fallback text-center" *ngIf="fi.imageUrl == null" (click)="onImageFallbackClick(fi.link)">
+                            <h5>{{fi.title}}</h5>
+                            <div class="text-fade"></div>
+                        </div>-->
+                        <a href="{{fi.link}}" target="_blank">
+                            <img src="{{fi.imageUrl}}" [alt]="fi.title" />
+                        </a>
+                    </div>
+                    <div class="col-md-10 mb-2">
+                        <div [innerHTML]="fi.content"></div>
+                        <a href="{{fi.link}}" target="_blank">Visit →</a>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+    <div class="loader" *ngIf="isLoading">
+        <h5>Loading...</h5>
+    </div>
+</div>

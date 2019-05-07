@@ -1,0 +1,13 @@
+{
+  "ConnectionStrings": {
+    "SourceMeConnectionString": "server=(localdb)\\MSSQLLocalDB;Database=SourceMeDb;Integrated Security=true;MultipleActiveResultSets=true;"
+  },
+  "Tokens": {
+    "key": "fdahfufjlsfefefguthtrgRZAgt",
+    "Issuer": "localhost",
+    "Audience": "localhost"
+
+  }
+
+
+}

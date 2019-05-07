@@ -1,0 +1,9 @@
+﻿.category-list {
+    list-style: none;
+    padding: 0px;
+}
+
+.sub-cat {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}

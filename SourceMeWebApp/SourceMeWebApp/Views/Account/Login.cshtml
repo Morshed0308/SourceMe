@@ -1,0 +1,70 @@
+﻿@using SourceMeWebApp.Models
+@model Login
+
+<div class="login-container col-md-3 card bg-light p-4">
+    <div class="text-info text-center"><h2>Source Me</h2></div>
+    <form method="post">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" name="username" required />
+            <div class="text-danger" >Username is required!</div>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" name="password" required />
+            <div class="text-danger" >Password is required!</div>
+        </div>
+        <div class="form-group">
+            <input type="submit" class="btn btn-success" value="Login"  />
+        </div>
+    </form>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+@*<div class="row">
+    <div class="col-md-3 offset-4">
+        <form method="post">
+            <div class="form-group">
+                <div asp-validation-summary="ModelOnly"></div>
+                <label asp-for="UserName">User Name</label>
+                <input asp-for="UserName" class="form-control" />
+                <span asp-validation-for="UserName" class="text-danger"></span>
+
+            </div>
+            <div class="form-group">
+                <label asp-for="Password">PassWord</label>
+                <input asp-for="Password" type="password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+
+            </div>
+            <div class="form-group">
+
+                <input asp-for="RememberMe" type="checkbox" class="checkbox" />
+                <label asp-for="RememberMe">Remember Me</label>
+                <span asp-validation-for="RememberMe"></span>
+
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Login" class="btn btn-success" />
+            </div>
+
+
+        </form>
+
+
+
+
+    </div>
+
+</div>*@ 
